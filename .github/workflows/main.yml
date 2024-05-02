@@ -8,3 +8,4 @@ jobs: # the things being executed
     steps:
       - uses: actions/checkout@v4 # using version 4 of Actions
       - run: npm test ./__tests__/sum.test.js # the actual testing line
+      - run: npm test ./__tests__/unit.test.js
