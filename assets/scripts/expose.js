@@ -72,15 +72,15 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   //function that uodates slider val
-  function updateAudioVolume() {
-    audio.volume = volumeSlider.value / 100;
-  }
   playButton.addEventListener("click", function() {
-    if(selectedOpt == "party-horn"){j
-      sConfetti.addConfetti();
+    if(selectedOpt == "party-horn") {
+      const jsConfetti = new JSConfetti()
+      jsConfetti.addConfetti({
+        emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
+     })
     }
     audio.play();
   });
 
-  updateAudioVolume();
 });
+  
