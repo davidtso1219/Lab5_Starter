@@ -1,7 +1,11 @@
 // expose.js
 
+// Initialize confetti
+const jsConfetti = new JSConfetti();
+
 window.addEventListener('DOMContentLoaded', init);
 
+// When browser loads
 function init() {
   // Drop-drop input
   var drop_elem = document.getElementById("horn-select");
@@ -18,6 +22,7 @@ function init() {
 
 }
 
+// Horn drop down options
 function hornDropDown(){
   // Chosen horn
   var horn_val = document.getElementById("horn-select").value;
@@ -42,6 +47,7 @@ function hornDropDown(){
   }
 }
 
+// Volume of range slider
 function volumeSlider(){
   // Slider volume 
   var vol_val = document.getElementById("volume").value;
@@ -70,22 +76,22 @@ function volumeSlider(){
   }
 }
 
-  function playSound(){
-    var aud = document.getElementsByClassName("hidden").src;
-    var horn_type = document.getElementById("horn-select").value;
-    var vol_val = document.getElementById("volume").value;
+// When play sound clicked
+function playSound(){
+  var aud = document.getElementsByClassName("hidden").src;
+  var horn_type = document.getElementById("horn-select").value;
+  var vol_val = document.getElementById("volume").value;
 
 
-    let full_aud = new Audio(aud);
+  let full_aud = new Audio(aud);
 
-    // Volume changes updates with slider
-    full_aud.volume = vol_val / 100;
-    full_aud.play();
+  // Volume changes updates with slider
+  full_aud.volume = vol_val / 100;
+  full_aud.play();
 
-    if (horn_type == "party-horn"){
-      const jsConfetti = new JSConfetti();
-      jsConfetti.addConfetti();
-    }
+  if (horn_type == "party-horn"){
+    jsConfetti.addConfetti();
+  }
 
 }
 
