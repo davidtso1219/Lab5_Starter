@@ -10,6 +10,13 @@ function init() {
     // Clear existing options
     voiceSelect.innerHTML = '';
 
+    // Add default option
+    let defaultOption = document.createElement('option');
+    defaultOption.value = 'select';
+    defaultOption.textContent = 'Select Voice';
+    defaultOption.selected = true; // Set as default selected
+    voiceSelect.appendChild(defaultOption);
+
     // Add new options for each voice
     voices.forEach(function(voice, index) {
       let option = document.createElement('option');
