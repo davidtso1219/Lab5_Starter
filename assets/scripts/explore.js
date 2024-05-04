@@ -14,7 +14,7 @@ function init() {
     let defaultOption = document.createElement('option');
     defaultOption.value = 'select';
     defaultOption.textContent = 'Select Voice';
-    defaultOption.selected = true; // Set as default selected
+    defaultOption.selected = false; // Set as default selected
     voiceSelect.appendChild(defaultOption);
 
     // Add new options for each voice
