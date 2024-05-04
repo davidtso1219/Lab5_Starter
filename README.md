@@ -1,4 +1,4 @@
 # Lab 5 - Starter
 Team:
-Clarissa Cheng
+Clarissa Cheng,
 Dhaivat Pachchigar

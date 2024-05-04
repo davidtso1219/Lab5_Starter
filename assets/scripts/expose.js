@@ -37,7 +37,6 @@ function init() {
     const volume = volumeSlider.value;
     hornAudio.volume = volume / 100;
 
-
     if (volume == 0) {
       volumeIcon.src = 'assets/icons/volume-level-0.svg';
       volumeIcon.alt = 'Volume level 0';
@@ -52,14 +51,6 @@ function init() {
       volumeIcon.alt = 'Volume level 3';
     }
   });
-
-
-  
-    
-  
-
-
- 
 }
 
 
