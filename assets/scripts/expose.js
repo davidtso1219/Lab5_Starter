@@ -78,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   //function that uodates slider val
   playButton.addEventListener("click", function() {
+    updateAudio();
     if(selectedOpt == "party-horn") {
       const jsConfetti = new JSConfetti()
       jsConfetti.addConfetti({
