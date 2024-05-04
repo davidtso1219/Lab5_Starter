@@ -84,7 +84,7 @@ test('Letters in date', () => {
 // isHexColor
 // TRUE 1
 test('3 value valid hex', () => {
-  expect(isHexColor("#AB3")).toBe(true);
+  expect(isHexColor("#AB2")).toBe(true);
 });
 // TRUE 2
 test('6 value valid hex', () => {
