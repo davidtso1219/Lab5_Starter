@@ -6,10 +6,11 @@ function init() {
   // TODO
 
   const textArea = document.getElementById("text-to-speak");
-  const speakButton = document.getElementById("button");
+  const speakButton = document.querySelector("button");
   const image = document.querySelector("[alt='Smiling face']");
   const voiceSelect = document.getElementById("voice-select");
 
+  // Get all voices and add them to possible selection  
   function populateVoiceSelect() {
     if (typeof speechSynthesis === "undefined") {
       return;
@@ -30,7 +31,7 @@ function init() {
     speechSynthesis.onvoiceschanged = populateVoiceSelect;
   }
 
-  // Having trouble here, don't hear the audio and can't seem to find any errors in code
+  // Speech part and changing smiley face
   speakButton.addEventListener("click", function() {
     const utterThis = new SpeechSynthesisUtterance(textArea.value);
     const selectedOption = voiceSelect.selectedOptions[0].getAttribute("data-name");
