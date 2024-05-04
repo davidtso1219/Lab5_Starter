@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', function(){
     updateAudioVolume();
   });
 
+  function updateAudioVolume() {
+    audio.volume = volumeSlider.value / 100;
+  }
+  
+
   function updateVolumeIcon() {
     let volume = volumeSlider.value;
 
