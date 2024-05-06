@@ -1,10 +1,10 @@
 # Lab 5 - Starter
 
-**Partners**\
+### Partners
 Po-Yu Lai\
 Peter Yoon
 
-**Link**\
+### Link
 https://astraeven0502.github.io/Lab5_Starter/expose.html
 https://astraeven0502.github.io/Lab5_Starter/explore.html
 
