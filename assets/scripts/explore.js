@@ -47,7 +47,7 @@ function init() {
 
     synth.speak(utterThis);
 
-    const face = document.getElementsByClassName('img');
+    const face = document.querySelector('img');
     face.src = 'assets/images/smiling-open.png';
 
     utterance.onend = () => {
