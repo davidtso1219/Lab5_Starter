@@ -41,18 +41,17 @@ function init() {
     for (let i = 0; i < voices.length; i++) {
       if (voices[i].name === voiceOpt) {
         utterThis.voice = voices[i];
-        break;
       }
     }
-
-    synth.speak(utterThis);
 
     const face = document.querySelector('img');
     face.src = 'assets/images/smiling-open.png';
 
     utterThis.onend = function() {
       face.src = 'assets/images/smiling.png';
-    };
+    }; 
+    
+    synth.speak(utterThis);
   }
 
   button.addEventListener('click', onClick);
