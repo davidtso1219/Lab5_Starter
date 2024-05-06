@@ -59,10 +59,11 @@ function init() {
   })
 
   let play = document.querySelector('button');
+
+  let confetti = new JSConfetti();
   play.addEventListener('click', function () {
     sound.play();
     if (hornSelector.value == 'party-horn') {
-      let confetti = new JSConfetti();
       confetti.addConfetti();
     }
   })
