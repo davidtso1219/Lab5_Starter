@@ -50,7 +50,7 @@ function init() {
     const face = document.getElementsByClassName('img');
     face.src = 'assets/images/smiling-open.png';
 
-    utterance.onend = () => {
+    utterThis.onend = () => {
       face.src = 'assets/images/smiling.png';
     };
   }
