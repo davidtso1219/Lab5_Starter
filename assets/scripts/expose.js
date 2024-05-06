@@ -1,4 +1,5 @@
-// expose.js
+//expose.js
+//Group 33 - Siddharth and Hartej
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -10,10 +11,10 @@ function init() {
   const hornImage = document.querySelector('#expose img');
   const audioElement = document.querySelector('audio');
 
-  // JS Confetti instance
+  //Confetti
   const jsConfetti = new JSConfetti();
 
-  // Paths
+
   const horns = {
     'air-horn': {
       image: 'assets/images/air-horn.svg',
@@ -29,7 +30,7 @@ function init() {
     },
   };
 
-  // Event Listeners
+  //Event Listeners
   hornSelect.addEventListener('change', updateHorn);
   volumeSlider.addEventListener('input', updateVolume);
   playButton.addEventListener('click', playSound);
