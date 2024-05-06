@@ -33,11 +33,13 @@ function init() {
   }
 
   function onClick() {
+    synth.cancel();
     voices = synth.getVoices();
 
     const text = document.getElementById('text-to-speak').value;
     const utterThis = new SpeechSynthesisUtterance(text);
     const voiceOpt = voiceSelect.selectedOptions[0].getAttribute("data-name");
+    
     for (let i = 0; i < voices.length; i++) {
       if (voices[i].name === voiceOpt) {
         utterThis.voice = voices[i];
@@ -45,12 +47,12 @@ function init() {
     }
 
     let face = document.querySelector('img');
-    face.src = '../images/smiling-open.png';
+    face.src = 'assets/images/smiling-open.png';
 
-    utterThis.onend = function() {
-      face.src = '../images/smiling.png';
-    }; 
-    
+    utterThis.onend = function () {
+      face.src = 'assets/images/smiling.png';
+    };
+
     synth.speak(utterThis);
   }
 
