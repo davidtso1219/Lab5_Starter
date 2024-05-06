@@ -44,11 +44,11 @@ function init() {
       }
     }
 
-    const face = document.querySelector('img');
-    face.src = 'assets/images/smiling-open.png';
+    let face = document.querySelector('img');
+    face.src = '../images/smiling-open.png';
 
     utterThis.onend = function() {
-      face.src = 'assets/images/smiling.png';
+      face.src = '../images/smiling.png';
     }; 
     
     synth.speak(utterThis);
