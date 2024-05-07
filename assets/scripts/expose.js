@@ -11,7 +11,6 @@ function init() {
     //updateimage to curroption image and sound
     let image = document.querySelector("img");
     image.src = relPath.concat("images/", currOption, ".svg");
-    
     audio.src = relPath.concat("audio/", currOption, ".mp3");
   }
   select.addEventListener("change", selectHandler);
