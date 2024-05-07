@@ -11,6 +11,6 @@ Personally I wouldn't because using unit tests to test messaging is inefficient 
 
    yes because this test is done on on a individual application that can be given a input and immediately given a output that is correct or not.
 
-[explore](http://127.0.0.1:5500/explore.html)
+[explore](Lab5_Starter/explore.html)
 
 [expose](http://127.0.0.1:5500/expose.html)
