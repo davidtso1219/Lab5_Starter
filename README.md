@@ -1,7 +1,7 @@
 # Lab 5 - Starter
 Name: Salman Navroz
 
-Expose.html: [https://salnav.github.io/Lab5_Starter/expose.html)](https://salnav.github.io/Lab5_Starter/expose.html)
+Expose.html: [https://salnav.github.io/Lab5_Starter/expose.html](https://salnav.github.io/Lab5_Starter/expose.html)
 
 Explore.html: [https://salnav.github.io/Lab5_Starter/explore.html](https://salnav.github.io/Lab5_Starter/explore.html)
 
