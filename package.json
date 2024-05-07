@@ -2,14 +2,16 @@
   "devDependencies": {
     "jest": "^29.7.0"
   },
-
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
-
   "type": "module",
+  "start": "http-server . -p 8000",
   "jest": {
     "transform": {},
     "verbose": true
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
   }
 }
