@@ -11,10 +11,10 @@ synth.addEventListener('voiceschanged', init);
 
 function init() {
   let voices = synth.getVoices();
-  const interval = setInterval(checkSpeaking, 500);
+  let interval = setInterval(checkSpeaking, 500);
   
   for(let i = 0; i < voices.length; i++) {
-    const option = document.createElement('option');
+    let option = document.createElement('option');
     option.text = voices[i].name;
     option.setAttribute('value', voices[i].name);
     voiceSelect.appendChild(option);
