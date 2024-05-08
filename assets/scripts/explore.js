@@ -1,6 +1,6 @@
 // explore.js
 
-// window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('DOMContentLoaded', init);
 
 let button = document.querySelector('button');
 let select = document.querySelector('select');
