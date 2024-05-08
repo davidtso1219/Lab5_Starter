@@ -3,9 +3,9 @@
 window.addEventListener('DOMContentLoaded', init);
 
 let button = document.querySelector('button');
-let select = document.querySelector('select');
+let voiceSelect = document.querySelector('#voice-select');
 let textArea = document.querySelector('textarea');
-let face = document.querySelector('main img');
+let image = document.querySelector('main img');
 let synth = window.speechSynthesis;
 synth.addEventListener('voiceschanged', init);
 
@@ -22,9 +22,9 @@ function init() {
   
   function checkSpeaking() {
     if (synth.speaking) {
-      face.setAttribute('src', 'assets/images/smiling-open.png');
+      image.setAttribute('src', 'assets/images/smiling-open.png');
     } else {
-      face.setAttribute('src', 'assets/images/smiling.png');
+      image.setAttribute('src', 'assets/images/smiling.png');
     }
   }
   
