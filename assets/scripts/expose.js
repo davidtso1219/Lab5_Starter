@@ -1,12 +1,13 @@
 // expose.js
 
 window.addEventListener('DOMContentLoaded', init);
-const button = document.querySelector('button');
-const select = document.querySelector('#horn-select');
-const audio = document.querySelector('audio');
-const image = document.querySelector('img');
-const slider = document.querySelector('#volume');
-const icon = document.querySelector('div > img');
+
+let image = document.querySelector('img');
+let icon = document.querySelector('div > img');
+let select = document.querySelector('#horn-select');
+let slider = document.querySelector('#volume');
+let button = document.querySelector('button');
+let audio = document.querySelector('audio');
 const jsConfetti = new JSConfetti();
 
 function init() {
