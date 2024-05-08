@@ -32,6 +32,14 @@ function init() {
     }
   });
 
+  // Play confetti if party horn
+  button.addEventListener('click', (e) => {
+    audio.play();
+    if (select.value == 'party-horn') {
+      jsConfetti.addConfetti();
+    }
+  });
+
   // Change volume icon based on volume slider
   slider.addEventListener('change', (e) => {
     let volume = slider.value;
@@ -46,13 +54,5 @@ function init() {
     }
     // Set audio volume
     audio.volume = volume / 100;
-  });
-
-  // Play confetti if party horn
-  button.addEventListener('click', (e) => {
-    audio.play();
-    if (select.value == 'party-horn') {
-      jsConfetti.addConfetti();
-    }
   });
 }
