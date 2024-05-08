@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', init);
 
 let image = document.querySelector('img');
-let icon = document.querySelector('div > img');
+let icon = document.querySelector('#volume-controls > img');
 let select = document.querySelector('#horn-select');
 let slider = document.querySelector('#volume');
 let button = document.querySelector('button');
