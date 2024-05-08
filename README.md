@@ -4,7 +4,7 @@ Members: David De Santiago - A17001592
 
 - My "expose.js" [here](expose.html)
 - My "explore.js" [here](explore.html)
-- 
+  
 ## Check Your Understanding
 
 ### Question 1
