@@ -3,7 +3,7 @@
 window.addEventListener('DOMContentLoaded', init);
 
 let button = document.querySelector('button');
-let select = document.querySelector('select');
+let select = document.querySelector('#voice-select');
 let textArea = document.querySelector('textarea');
 let face = document.querySelector('main img');
 let synth = window.speechSynthesis;
