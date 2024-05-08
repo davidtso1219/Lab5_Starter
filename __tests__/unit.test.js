@@ -43,7 +43,7 @@ test('flasee2', () => {
 
 
 test('truesp1', () => {
-  expect(isStrongPassword("vnNEoi94_e32cew")).toBe(false);
+  expect(isStrongPassword("vnNEoi94_e32cew")).toBe(true);
 });
 
 test('truesp2', () => {
