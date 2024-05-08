@@ -10,16 +10,17 @@ let synth = window.speechSynthesis;
 synth.addEventListener('voiceschanged', init);
 
 function init() {
+  // Initailize list of voices
   let voices = synth.getVoices();
-  let interval = setInterval(checkSpeaking, 500);
-  
   for(let i = 0; i < voices.length; i++) {
     let option = document.createElement('option');
     option.text = voices[i].name;
     option.setAttribute('value', voices[i].name);
     voiceSelect.appendChild(option);
   }
-  
+
+  // Change image while speaking
+  let interval = setInterval(checkSpeaking, 100);
   function checkSpeaking() {
     if (synth.speaking) {
       image.setAttribute('src', 'assets/images/smiling-open.png');
@@ -28,6 +29,7 @@ function init() {
     }
   }
   
+  // Generate speech when button clicked
   button.addEventListener('click', (e) => { 
     let utterance = new SpeechSynthesisUtterance(textArea.value);
     let selectedOption = voiceSelect.value;
@@ -37,8 +39,6 @@ function init() {
         utterance.lang = voices[i].lang;
       }
     }
-
     synth.speak(utterance);
-    textArea.value = "";
   })
 }
