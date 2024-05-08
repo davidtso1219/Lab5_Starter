@@ -8,7 +8,7 @@ let slider = document.querySelector('#volume');
 let volumeIcon = document.querySelector('#volume-controls > img');
 let button = document.querySelector('button');
 let audio = document.querySelector('audio');
-let jsConfetti = new JSConfetti();
+const jsConfetti = new JSConfetti();
 
 function init() {
   // Change image based on horn select bar
