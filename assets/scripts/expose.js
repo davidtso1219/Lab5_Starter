@@ -38,6 +38,7 @@ const icon = document.querySelector('#volume-controls img')
 volume.addEventListener('input',function(){
   if(parseInt(volume.value) == 0 ){
     icon.src = 'assets/icons/volume-level-0.svg';
+   
   }else if(parseInt(volume.value)<33){
     icon.src = 'assets/icons/volume-level-1.svg';
   }else if (parseInt(volume.value)<67){
@@ -53,9 +54,8 @@ const jsConfetti = new JSConfetti();
 
 button.addEventListener('click', function(){
   sound.play();
+  sound.volume = parseInt(volume.value)/100;
   if(horn.value=='party-horn'){
-   
-
   jsConfetti.addConfetti()
   }
 });

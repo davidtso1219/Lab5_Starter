@@ -15,7 +15,7 @@ expect(isPhoneNumber("(113) 436-7390")).toBe(true);
 test('this should be true' , ()=>{
   expect(isPhoneNumber("(124) 356-7290")).toBe(true);
   })
-test('this should be true' , ()=>{
+test('this should be false' , ()=>{
     expect(isPhoneNumber("(1x4) 45''s6-7890")).toBe(false);
     })
 test('this is wrong format',()=>{
