@@ -2,10 +2,11 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
-let button = document.querySelector('button');
-let select = document.querySelector('#voice-select');
-let textArea = document.querySelector('textarea');
+
 let face = document.querySelector('main img');
+let textArea = document.querySelector('textarea');
+let voiceSelect = document.querySelector('#voice-select');
+let button = document.querySelector('button');
 let synth = window.speechSynthesis;
 synth.addEventListener('voiceschanged', init);
 
@@ -17,7 +18,7 @@ function init() {
     const option = document.createElement('option');
     option.text = voices[i].name;
     option.setAttribute('value', voices[i].name);
-    select.appendChild(option);
+    voiceSelect.appendChild(option);
   }
   
   function checkSpeaking() {
@@ -30,7 +31,7 @@ function init() {
   
   button.addEventListener('click', (e) => { 
     let utterance = new SpeechSynthesisUtterance(textArea.value);
-    let selectedOption = select.value;
+    let selectedOption = voiceSelect.value;
     for (let i = 0; i < voices.length; i++) {
       if (voices[i].name === selectedOption) {
         utterance.voice = voices[i];
