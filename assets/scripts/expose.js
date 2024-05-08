@@ -8,9 +8,10 @@ let slider = document.querySelector('#volume');
 let volumeIcon = document.querySelector('#volume-controls > img');
 let button = document.querySelector('button');
 let audio = document.querySelector('audio');
-const jsConfetti = new JSConfetti();
+let jsConfetti = new JSConfetti();
 
 function init() {
+  // Change image based on horn select bar
   hornSelect.addEventListener('change', (e) => {
     let value = hornSelect.value;
     switch (value) {
@@ -31,13 +32,7 @@ function init() {
     }
   });
 
-  button.addEventListener('click', (e) => {
-    audio.play();
-    if (select.value == 'party-horn') {
-      jsConfetti.addConfetti();
-    }
-  });
-
+  // Change volume icon based on volume slider
   slider.addEventListener('change', (e) => {
     let volume = slider.value;
     if (volume == 0) {
@@ -49,6 +44,15 @@ function init() {
     } else {
       volumeIcon.setAttribute('src', 'assets/icons/volume-level-3.svg');
     }
+    // Set audio volume
     audio.volume = volume / 100;
+  });
+
+  // Play confetti if party horn
+  button.addEventListener('click', (e) => {
+    audio.play();
+    if (select.value == 'party-horn') {
+      jsConfetti.addConfetti();
+    }
   });
 }
