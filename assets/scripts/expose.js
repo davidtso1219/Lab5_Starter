@@ -51,7 +51,7 @@ function init() {
 
   // button portion
   let button = document.querySelector("button");
-  let jsConfetti = new JSConfetti();
+  let jsConfetti = new jsConfetti();
 
   button.addEventListener("click", function () {
     audio.play();
@@ -61,7 +61,5 @@ function init() {
         emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'],
       })
     }
-
-    audioElement.play();
   });
 }
