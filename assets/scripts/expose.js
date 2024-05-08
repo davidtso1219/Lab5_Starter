@@ -50,9 +50,9 @@ function init() {
 
   // Play confetti if party horn
   button.addEventListener('click', (e) => {
-    audio.play();
     if (hornSelect.value == 'party-horn') {
       jsConfetti.addConfetti();
-      }
+    }
+    audio.play();  
   });
 }
