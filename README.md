@@ -9,3 +9,7 @@ Not really. Since unit testing is used to debug on a _small_ scale, but the mess
 **Would you use a unit test to test the “max message length” feature of a messaging application? Why or why not? For this question, assume the “max message length” feature prevents the user from typing more than 80 characters.**
 
 Yes. This is a much better use of unit testing. Since this is a small part of the code with very few moving parts, it would be a great use case for unit testing. You could write a unit test that tries to write a message that exceeds the maximum length, and checks if it is allowed to write the entire thing. 
+
+Expose site: https://ukcsd.github.io/Lab5_Starter/expose.html
+
+Explore site: https://ukcsd.github.io/Lab5_Starter/explore.html
