@@ -47,9 +47,13 @@ function init() {
       jsConfetti.addConfetti({
         confettiRadius: 6,
         confettiNumber: 300,
-        spread: 120,
+        spread: 360,
         startVelocity: 50,
         gravity: 1,
+        origin: {
+          x: 0.5,
+          y: 0.5
+        }
       });
     }
   });
