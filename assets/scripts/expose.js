@@ -3,39 +3,48 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  // TODO
-  const hornSelect = document.getElementById('horn-select');
-  const volumeSlider = document.getElementById('volume');
-  const playButton = document.querySelector('button');
+  //TODO
+  // Get references to DOM elements
+  const hornSelectElement = document.getElementById('horn-select');
+  const volumeSliderElement = document.getElementById('volume');
+  const playButtonElement = document.querySelector('button');
   const audioElement = document.querySelector('audio');
-  const imageElement = document.querySelector('#expose img');
-  const volumeIcon = document.querySelector('#volume-controls img');
+  const hornImageElement = document.querySelector('#expose img');
+  const volumeIconElement = document.querySelector('#volume-controls img');
 
-  hornSelect.addEventListener('change', function() {
-    const selectedOption = hornSelect.options[hornSelect.selectedIndex].value;
-    imageElement.src = `assets/images/${selectedOption}.svg`;
-    audioElement.src = `assets/audio/${selectedOption}.mp3`;
+  // Event listener for horn selection
+  hornSelectElement.addEventListener('change', function() {
+    const selectedHorn = hornSelectElement.value;
+    hornImageElement.src = `assets/images/${selectedHorn}.svg`;
+    hornImageElement.alt = selectedHorn;
+    audioElement.src = `assets/audio/${selectedHorn}.mp3`;
   });
 
-  volumeSlider.addEventListener('input', function() {
-    const volume = parseInt(volumeSlider.value);
-    audioElement.volume = volume / 100;
+  // Event listener for volume slider
+  volumeSliderElement.addEventListener('input', function() {
+    const volumeValue = volumeSliderElement.value;
+    audioElement.volume = volumeValue / 100;
 
-    if (volume === 0) {
-      volumeIcon.src = 'assets/icons/volume-level-0.svg';
-    } else if (volume < 33) {
-      volumeIcon.src = 'assets/icons/volume-level-1.svg';
-    } else if (volume < 67) {
-      volumeIcon.src = 'assets/icons/volume-level-2.svg';
+    if (volumeValue == 0) {
+      volumeIconElement.src = 'assets/icons/volume-level-0.svg';
+      volumeIconElement.alt = 'Volume level 0';
+    } else if (volumeValue < 33) {
+      volumeIconElement.src = 'assets/icons/volume-level-1.svg';
+      volumeIconElement.alt = 'Volume level 1';
+    } else if (volumeValue < 67) {
+      volumeIconElement.src = 'assets/icons/volume-level-2.svg';
+      volumeIconElement.alt = 'Volume level 2';
     } else {
-      volumeIcon.src = 'assets/icons/volume-level-3.svg';
+      volumeIconElement.src = 'assets/icons/volume-level-3.svg';
+      volumeIconElement.alt = 'Volume level 3';
     }
   });
 
-  playButton.addEventListener('click', function() {
+  // Event listener for play button
+  playButtonElement.addEventListener('click', function() {
     audioElement.play();
-    if (hornSelect.value === 'party-horn') {
-      const jsConfetti = new JSConfetti(); 
+    if (hornSelectElement.value === 'party-horn') {
+      const jsConfetti = new JSConfetti();
       jsConfetti.addConfetti();
     }
   });
