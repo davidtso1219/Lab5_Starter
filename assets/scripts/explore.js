@@ -1,57 +1,54 @@
 // explore.js
+// resources: https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
 
 window.addEventListener('DOMContentLoaded', init);
+const synth = window.speechSynthesis;
 
 function init() {
-  // TODO
-  const textArea = document.getElementById('text-to-speak');
-    const voiceSelect = document.getElementById('voice-select');
-    const talkButton = document.querySelector('button');
+  // populate the select options on page load
+  let availableVoices = [];
+  const voiceDropdown = document.querySelector('select');
+
+  function populateVoiceOptions() {
+    availableVoices = synth.getVoices();
+    for (let i = 0; i < availableVoices.length; i++) {
+      const option = document.createElement('option');
+      option.textContent = `${availableVoices[i].name} (${availableVoices[i].lang})`;
+      if (availableVoices[i].default) {
+        option.textContent += ' — DEFAULT';
+      }
+      option.setAttribute('data-lang', availableVoices[i].lang);
+      option.setAttribute('data-name', availableVoices[i].name);
+      voiceDropdown.appendChild(option);
+    }
+  }
+
+  populateVoiceOptions();
+  if (synth.onvoiceschanged !== undefined) {
+    synth.onvoiceschanged = populateVoiceOptions;
+  }
+
+  const textInput = document.getElementById('text-to-speak');
+
+  const speakButton = document.querySelector('button');
+
+  speakButton.addEventListener('click', () => {
+    const utterance = new SpeechSynthesisUtterance(textInput.value);
+    const selectedVoice = voiceDropdown.selectedOptions[0].getAttribute('data-name');
+    for (let i = 0; i < availableVoices.length; i++) {
+      if (availableVoices[i].name === selectedVoice) {
+        utterance.voice = availableVoices[i];
+        break;
+      }
+    }
+
     const faceImage = document.querySelector('img');
+    faceImage.src = 'assets/images/smiling-open.png';
 
-    function populateVoiceList() {
-        if (typeof speechSynthesis === 'undefined') {
-            return;
-        }
-        let voices = speechSynthesis.getVoices();
+    utterance.onend = () => {
+      faceImage.src = 'assets/images/smiling.png';
+    };
 
-        for (let i = 0; i < voices.length; i++) {
-            let option = document.createElement('option');
-            option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
-            if (voices[i].default) {
-                option.textContent += ' — DEFAULT';
-            }
-            option.setAttribute('data-name', voices[i].name);
-            option.setAttribute('data-lang', voices[i].lang);
-            voiceSelect.appendChild(option);
-        }
-    }
-
-    populateVoiceList();
-    if (typeof speechSynthesis !== 'undefined' && speechSynthesis.onvoiceschanged !== null) {
-        speechSynthesis.onvoiceschanged = populateVoiceList;
-    }
-
-    function speak() {
-        if (speechSynthesis.speaking) {
-            console.error('speechSynthesis.speaking');
-            return;
-        }
-        if (textArea.value !== '') {
-            let utterance = new SpeechSynthesisUtterance(textArea.value);
-            let selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
-            utterance.voice = speechSynthesis.getVoices().find(voice => voice.name === selectedOption);
-            
-            utterance.onstart = function () {
-                faceImage.src = 'assets/images/smiling-open.png';
-            };
-            utterance.onend = function () {
-                faceImage.src = 'assets/images/smiling.png';
-            };
-            
-            speechSynthesis.speak(utterance);
-        }
-    }
-
-    talkButton.addEventListener('click', speak);
+    synth.speak(utterance);
+  });
 }
