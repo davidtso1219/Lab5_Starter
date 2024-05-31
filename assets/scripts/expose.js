@@ -3,7 +3,6 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  //TODO
   // Get references to DOM elements
   const hornSelectElement = document.getElementById('horn-select');
   const volumeSliderElement = document.getElementById('volume');
@@ -45,7 +44,13 @@ function init() {
     audioElement.play();
     if (hornSelectElement.value === 'party-horn') {
       const jsConfetti = new JSConfetti();
-      jsConfetti.addConfetti();
+      jsConfetti.addConfetti({
+        confettiRadius: 6,
+        confettiNumber: 300,
+        spread: 120,
+        startVelocity: 50,
+        gravity: 1,
+      });
     }
   });
 }
