@@ -2,8 +2,8 @@
 
 Members: David De Santiago - A17001592
 
-- My "expose.js" [here]([expose.html](https://ddesantiag0.github.io/Lab5_Starter/expose.html))
-- My "explore.js" [here]([explore.html](https://ddesantiag0.github.io/Lab5_Starter/explore.html))
+- My "expose.js" [here](https://ddesantiag0.github.io/Lab5_Starter/expose.html)
+- My "explore.js" [here](https://ddesantiag0.github.io/Lab5_Starter/explore.html)
   
 ## Check Your Understanding
 
